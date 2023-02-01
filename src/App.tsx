@@ -47,7 +47,6 @@ function App() {
             </div>
             <div className="container">
 
-                <p>Enter a process name & select your dll.</p>
 
                 <input
                     id="injection"
