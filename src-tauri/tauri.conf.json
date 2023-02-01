@@ -55,10 +55,11 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
-        "resizable": true,
-        "title": "injector-gui-rs",
-        "width": 800
+        "height": 400,
+        "resizable": false,
+        "title": "Sola Injector",
+        "width": 500,
+        "decorations": false
       }
     ]
   }

@@ -10,7 +10,8 @@ use dll_syringe::Syringe;
 fn inject(process: &str, dll_path: &str) {
     let target_process = OwnedProcess::find_first_by_name(&process).unwrap();
     let instance = Syringe::for_process(target_process);
-    let _payload = instance.inject(dll_path).unwrap();
+    let _ = instance.inject(dll_path).unwrap();
+
 }
 
 fn main() {

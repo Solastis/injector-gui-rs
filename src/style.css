@@ -12,23 +12,90 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+    user-select: none;
+}
+
+#welcome:hover {
+    filter: drop-shadow(0 0 2rem #c01f44);
+}
+#titlebar-close:hover {
+    background: #c01f44;
+}
+.titlebar {
+    border: #343434 2px groove;
+    font-family: Consolas, serif;
+    height: 30px;
+    background: #383737;
+    user-select: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.titlebar-buttons {
+    justify-content: flex-end;
+    user-select: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.titlebar-name-left {
+    justify-content: flex-start;
+    display: inline-flex;
+    align-items: center;
+    font-size: .9em;
+    font-weight: 500;
+    color: #ffffff;
+    padding-left: 10px;
+    height: 2px;
+    width: 100%;
+    text-shadow: 1px 1px 0 #000000;
+}
+
+.titlebar-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-right: 2px;
+}
+
+.titlebar-button:hover {
+    background: rgba(232, 229, 229, 0.46);
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#welcome {
+    transition: 500ms;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.inject {
+    margin: 5px
 }
 
 .container {
-    margin: 0;
     padding-top: 10vh;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
     justify-content: center;
     text-align: center;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: 0.75s;
-}
 
 .logo.tauri:hover {
     filter: drop-shadow(0 0 2em #24c8db);
@@ -36,15 +103,15 @@
 
 .row {
     display: flex;
-    justify-content: center;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .selector {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: .5em;
     cursor: pointer;
 }
 
@@ -89,14 +156,14 @@ button {
     outline: none;
 }
 
-#greet-input {
-    margin-right: 5px;
+#injection {
+    margin: 5px 5px 5px 5px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         color: #f6f6f6;
-        background-color: #2f2f2f;
+        background-color: #212121;
     }
 
     a:hover {
