@@ -1,6 +1,6 @@
-# injector-gui-rs
-
+## injector-gui-rs
 A quick little project I made for fun using tauri and dll-syringe
+If there is some bad code in here, feel free to correct it, as this is a project to improve my Rust knowledge
 ## License
 This project is subject to the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html). This does only apply for source code located directly in this clean repository. During the development and compilation process, additional source code may be used to which we have obtained no rights. Such code is not covered by the GPL license.
 
