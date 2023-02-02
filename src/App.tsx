@@ -21,6 +21,10 @@ function App() {
         if (selected != null) setDll(selected[0])
     }
 
+    function getDll(dll: string) {
+        return dll === "" ? "No dll selected" : "Selected: " + dll.split("\\").pop();
+    }
+
     async function inject() {
         const res = await invoke('inject', {
             process: process,
@@ -37,7 +41,7 @@ function App() {
                     <div className="titlebar-button" id="titlebar-minimize" onClick={() => appWindow.minimize()}>
                         <CgMinimizeAlt/>
                     </div>
-                    <div className="titlebar-button" id="titlebar-maximize"  onClick={() => appWindow.toggleMaximize()}>
+                    <div className="titlebar-button" id="titlebar-maximize" onClick={() => appWindow.toggleMaximize()}>
                         <CgMaximize/>
                     </div>
                     <div className="titlebar-button" id="titlebar-close" onClick={() => appWindow.close()}>
@@ -51,10 +55,13 @@ function App() {
                 <input
                     id="injection"
                     onChange={(e) => setProcess(e.currentTarget.value)}
-                    placeholder="Enter a process name"/>
+                    placeholder="Enter a process name"
+                    type={"text"}
+                    style={{textAlign: "center"}}
+                />
 
                 <button className={"dll"} type="button" onClick={() => openFile()}>
-                    Select dll
+                    {getDll(dll)}
                 </button>
 
                 <button className={"inject"} type="button" onClick={() => inject()}>

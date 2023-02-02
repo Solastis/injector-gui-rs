@@ -3,26 +3,34 @@ all(not(debug_assertions), target_os = "windows"),
 windows_subsystem = "windows"
 )]
 
+use std::env;
 use dll_syringe::process::OwnedProcess;
 use dll_syringe::Syringe;
 
-/**
- * Injects a dll into a process
- * @param process The name of the process to inject into
- * @param dll_path The path to the dll to inject
- **/
+/// Injects a dll into a process
+/// # Arguments
+/// * `process` - The name of the process to inject into
+/// * `dll_path` - The path to the dll to inject
 #[tauri::command]
 fn inject(process: &str, dll_path: &str) {
-    // TODO : Make this work with id's instead of names
+    // TODO : Make this not depend on dll_syringe
+
 
     // Find the process that the user wants to inject into
     let target_process = OwnedProcess::find_first_by_name(&process).unwrap();
 
     // Creates Syringe instance with the target process
+    // Injects the dll into the process
     let instance = Syringe::for_process(target_process);
 
-    // Injects the dll into the process
-    let _ = instance.inject(dll_path).unwrap();
+    let result = instance
+        .inject(dll_path)
+        .unwrap();
+
+    std::fs::write(env::current_dir().unwrap().join("\\sola\\out"), format!("{:?}", result)).unwrap();
+
+    // Closes the tauri application
+    std::process::exit(0);
 }
 
 fn main() {
