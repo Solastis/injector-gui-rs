@@ -16,7 +16,8 @@
     "bundle": {
       "active": true,
       "category": "DeveloperTool",
-      "copyright": "",
+      "copyright": "Solastis",
+  
       "deb": {
         "depends": []
       },
@@ -36,6 +37,7 @@
       "resources": [],
       "shortDescription": "",
       "targets": "all",
+      "publisher": "Solastis",
       "windows": {
         "certificateThumbprint": null,
         "digestAlgorithm": "sha256",

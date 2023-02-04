@@ -1,12 +1,12 @@
 [package]
 name = "injector-gui-rs"
-version = "0.0.0"
+version = "0.1.0"
 description = "A Tauri App"
-authors = ["you"]
+authors = ["Solastis"]
 license = ""
 repository = ""
 edition = "2021"
-rust-version = "1.57"
+rust-version = "1.68.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -21,6 +21,7 @@ dll-syringe = "0.15.0"
 color-eyre = "0.6.2"
 ctor = "0.1.26"
 winapi = { version = "0.3.9", features = ["consoleapi", "minwindef"] }
+chrono = "0.4.19"
 
 
 [features]
