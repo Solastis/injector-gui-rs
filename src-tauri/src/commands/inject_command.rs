@@ -9,7 +9,7 @@ use std::io::prelude::*;
 /// * `process` - The name of the process to inject into
 /// * `dll_path` - The path to the dll to inject
 #[tauri::command]
-pub fn run_command(process: &str, dll_path: &str) {
+pub fn inject(process: &str, dll_path: &str) {
     // TODO : Make this not depend on dll_syringe
 
     // Find the process that the user wants to inject into

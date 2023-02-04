@@ -9,7 +9,7 @@ use commands::inject_command;
 fn main() {
     // Tauri app builder and run
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![inject_command::run_command])
+        .invoke_handler(tauri::generate_handler![inject_command::inject])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
